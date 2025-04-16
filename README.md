@@ -8,7 +8,7 @@ It uses the public NASA API to search for planets with temperatures between 200â
 ## What It Does
 
 - Sends a request to the NASA Exoplanet Archive API
-- Filters planets with equilibrium temperatures that might support life
+- Filters planets with temperatures that might support life
 - Displays:
   - Name
   - Orbital period

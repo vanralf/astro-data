@@ -1,19 +1,16 @@
 # astro-data
-import requests
+# NASA Habitable Planets Finder
 
-# Data from NASA Exoplanet Archive
-url = "https://exoplanetarchive.ipac.caltech.edu/TAP/sync"
-params = {
-    "query": "SELECT pl_name, pl_orbper, pl_rade, pl_eqt FROM ps WHERE pl_eqt BETWEEN 200 AND 300",
-    "format": "json"
-}
+This Python script connects to NASA's Exoplanet Archive and prints a list of potentially habitable exoplanets.
 
-# Send request to the API
-response = requests.get(url, params=params)
+It uses the public NASA API to search for planets with temperatures between 200–300 Kelvin which is roughly the range where liquid water could exist.
 
-# Convert response to JSON
-data = response.json()
+## What It Does
 
-# Print basic info about each planet
-for planet in data:
-    print(f"Name: {planet['pl_name']}, Orbital Period: {planet['pl_orbper']} days, Radius: {planet['pl_rade']} Earths, Temp: {planet['pl_eqt']} K")
+- Sends a request to the NASA Exoplanet Archive API
+- Filters planets with equilibrium temperatures that might support life
+- Displays:
+  - Name
+  - Orbital period
+  - Radius
+  - Estimated temperature
